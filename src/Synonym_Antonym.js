@@ -1,6 +1,6 @@
 import React from "react";
 import "./Synonym_Antonym.css";
-export default function Synonym_Antonym() {
+export default function Synonym_Antonym(props) {
   return (
     <div id="SynonymAntonym">
       <span className="synonym">

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Definitions.css";
-export default function Definitions() {
+export default function Definitions(props) {
+  console.log(props, 2);
   return (
     <div id="definition">
       <div>
