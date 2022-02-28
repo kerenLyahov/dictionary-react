@@ -11,20 +11,20 @@ export default function Dictionary(props) {
   for (let i = 0; i < meaning.lenght; i++) {
     lenght.push(i);
   }
-
-  return (
-    <div>
-      {lenght.map((i) => {
-        return (
-          <div>
-            <Definitions data={meaning[0][i]} />
-            <Origin data={meaning[0][i]} />
-            <Sentence data={meaning[0][i]} />
-            <Pictures data={meaning[0][i]} />
-            <Synonym_Antonym data={meaning[0][i]} />
-          </div>
-        );
-      })}{" "}
-    </div>
-  );
+  return <Definitions data={props} />;
+  //   return (
+  //     <div>
+  //       {lenght.map((i) => {
+  //         return (
+  //           <div>
+  //             <Definitions data={meaning[0][i]} />
+  //             <Origin data={meaning[0][i]} />
+  //             <Sentence data={meaning[0][i]} />
+  //             <Pictures data={meaning[0][i]} />
+  //             <Synonym_Antonym data={meaning[0][i]} />
+  //           </div>
+  //         );
+  //       })}{" "}
+  //     </div>
+  //   );
 }
