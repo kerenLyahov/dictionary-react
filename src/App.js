@@ -20,6 +20,7 @@ function App() {
   }
 
   function search() {
+    // Documentation - https://dictionaryapi.dev/
     let APIUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     axios.get(APIUrl).then(handleResponse);
   }
@@ -35,7 +36,12 @@ function App() {
       searchWord: response.data[0].word,
       meaning: [
         lenght.map((i) => {
-          return response.data[i].meanings;
+          return response.data[0].meanings[i].definitions;
+        }),
+      ],
+      partOfSpeech: [
+        lenght.map((i) => {
+          return response.data[0].meanings[i].partOfSpeech;
         }),
       ],
     });

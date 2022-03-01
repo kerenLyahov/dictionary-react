@@ -7,11 +7,33 @@ import Pictures from "./Pictures";
 
 export default function Dictionary(props) {
   let meaning = props.keyword.meaning[0];
-  let lenght = [];
-  for (let i = 0; i < meaning.lenght; i++) {
-    lenght.push(i);
+  console.log(meaning);
+  let define = [];
+  let define2 = [];
+  let length = [];
+  for (let i = 0; i < meaning.length; i++) {
+    length.push(i);
   }
-  return <Definitions data={props} />;
+
+  for (let j = 0; j < meaning[0].length; j++) {
+    define.push(meaning[0][j].definition);
+  }
+  for (let j = 0; j < meaning[1].length; j++) {
+    define2.push(meaning[1][j].definition);
+  }
+
+  return (
+    <div>
+      <Definitions
+        data={define}
+        partOfSpeech={props.keyword.partOfSpeech[0][0]}
+      />
+      <Definitions
+        data={define2}
+        partOfSpeech={props.keyword.partOfSpeech[0][1]}
+      />
+    </div>
+  );
   //   return (
   //     <div>
   //       {lenght.map((i) => {
