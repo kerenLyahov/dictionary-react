@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
-import Dictionary from "./Dictionary";
+import Definitions from "./Definitions";
 
 function App() {
   let [word, setWord] = useState("Word");
@@ -27,23 +27,10 @@ function App() {
 
   function handleResponse(response) {
     let definitions = response.data.length;
-    let lenght = [];
-    for (let i = 0; i < definitions; i++) {
-      lenght.push(i);
-    }
     setKeyWord({
       ready: true,
       searchWord: response.data[0].word,
-      meaning: [
-        lenght.map((i) => {
-          return response.data[0].meanings[i].definitions;
-        }),
-      ],
-      partOfSpeech: [
-        lenght.map((i) => {
-          return response.data[0].meanings[i].partOfSpeech;
-        }),
-      ],
+      meaning: response.data[0].meanings,
     });
   }
 
@@ -59,7 +46,15 @@ function App() {
           <input type="submit" placeholder="search" />
         </form>
         <div className="word">{keyword.searchWord}</div>
-        <Dictionary keyword={keyword} />
+        <div>
+          {keyword.meaning.map(function (meaning, index) {
+            return (
+              <div key={index}>
+                <Definitions meaning={keyword.meaning[index]} />
+              </div>
+            );
+          })}
+        </div>
 
         <div id="opnSrcLink">
           <a
