@@ -4,10 +4,9 @@ import axios from "axios";
 import Definitions from "./Definitions";
 
 function App() {
-  let [word, setWord] = useState("Word");
+  let [word, setWord] = useState("Welcome");
   let [keyword, setKeyWord] = useState({
     ready: false,
-    searchWord: "Hello",
   });
 
   function handleSubmit(event) {
@@ -45,6 +44,11 @@ function App() {
             className="search"
           />
           <input type="submit" placeholder="search" className="submit" />
+
+          <label className="switch" for="mode">
+            <input type="checkbox" id="mode" />
+            <span className="slider round"></span>
+          </label>
         </form>
         <div className="word">{keyword.searchWord}</div>
         <div>

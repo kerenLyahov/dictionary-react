@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
-import useCollapse from "react-collapsed";
+import React, { useState } from "react";
+
 import "./Definitions.css";
 export default function Definitions(props) {
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-  console.log(props.meaning.definitions);
+  const [isTruncated, setIsTruncated] = useState(true);
+  function toggleIsTruncated() {
+    setIsTruncated(!isTruncated);
+  }
 
   return (
     <div id="definition">
@@ -11,22 +13,24 @@ export default function Definitions(props) {
         {props.meaning.partOfSpeech}{" "}
         <span>({props.meaning.definitions.length})</span>
       </div>
-      <div className="collapsible">
-        <div className="header" {...getToggleProps()}>
-          {isExpanded ? "click on me to collapse" : "click on me to expand"}
-        </div>
-        <div {...getCollapseProps()}>
-          <ol className="content">
-            {props.meaning.definitions.map(function (index, num) {
-              return (
-                <li key={index.num}>
-                  {props.meaning.definitions[num].definition}
-                </li>
-              );
+      <button id="truncated" onClick={toggleIsTruncated}>
+        {isTruncated ? "Read more" : "Read less"}
+      </button>
+      <ol className="content">
+        <li>{props.meaning.definitions[0].definition}</li>
+
+        {isTruncated
+          ? ""
+          : props.meaning.definitions.map(function (index, num) {
+              if (num > 0) {
+                return (
+                  <li key={index.num}>
+                    {props.meaning.definitions[num].definition}
+                  </li>
+                );
+              }
             })}
-          </ol>
-        </div>
-      </div>
+      </ol>
     </div>
   );
 }

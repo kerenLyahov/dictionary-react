@@ -11,8 +11,21 @@
   font-size: 15px;
 }
 .content {
-  background-color: pink;
+  max-width: 80%;
 }
 .header {
   cursor: pointer;
+}
+#truncated {
+  float: right;
+  text-align: center;
+  font-family: "Balsamiq Sans", cursive;
+  padding: 5px 15px;
+  background-color: lightblue;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+#truncated:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 6px black;
 }
