@@ -42,8 +42,9 @@ function App() {
             type="search"
             placeholder="Enter a word"
             onChange={updateWord}
+            className="search"
           />
-          <input type="submit" placeholder="search" />
+          <input type="submit" placeholder="search" className="submit" />
         </form>
         <div className="word">{keyword.searchWord}</div>
         <div>

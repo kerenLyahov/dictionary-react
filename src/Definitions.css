@@ -1,24 +1,18 @@
 #definition {
   border: 2mm ridge rgba(50, 138, 220, 0.6);
+  margin: 8px auto;
 }
 
 .collapsible {
   background-color: #eee;
-
   padding: 18px;
   text-align: left;
   outline: none;
   font-size: 15px;
 }
-.content:after {
+.content {
   background-color: pink;
-
-  transition: max-height 0.2s ease-out;
 }
-
-.collapsible:after {
-  font-size: 13px;
-  /* color: white; */
-  float: right;
-  margin-left: 5px;
+.header {
+  cursor: pointer;
 }
