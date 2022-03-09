@@ -1,9 +1,0 @@
-#SynonymAntonym {
-  height: 155px;
-}
-.synonym,
-.antonym {
-  float: left;
-  width: 47.6%;
-  border: 2mm ridge rgba(98, 220, 50, 0.6);
-}
