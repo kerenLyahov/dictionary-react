@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import Definitions from "./Definitions";
+import Phonetic from "./Phonetic";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/Globalstyle";
 import { lightTheme, darkTheme } from "./components/Themes";
@@ -9,7 +10,7 @@ import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
 
 function App() {
-  let [word, setWord] = useState("Welcome");
+  let [word, setWord] = useState("hello");
   let [keyword, setKeyWord] = useState({
     ready: false,
   });
@@ -36,6 +37,7 @@ function App() {
       ready: true,
       searchWord: response.data[0].word,
       meaning: response.data[0].meanings,
+      phonetic: response.data[0].phonetics,
     });
   }
 
@@ -55,11 +57,12 @@ function App() {
             <input type="submit" placeholder="search" className="submit" />
           </form>
           <div className="word">{keyword.searchWord}</div>
+          <Phonetic phonetic={keyword.phonetic} />
           <div>
-            {keyword.meaning.map(function (meaning, index) {
+            {keyword.meaning.map(function (index, i) {
               return (
                 <div key={index}>
-                  <Definitions meaning={keyword.meaning[index]} />
+                  <Definitions meaning={keyword.meaning[i]} />
                 </div>
               );
             })}

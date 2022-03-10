@@ -1,7 +1,7 @@
 import React from "react";
 import "./Synonym.css";
 export default function Synonym(props) {
-  if (props.data.length != 0) {
+  if (props.data.length !== 0) {
     return (
       <div className="body">
         <span className="synonyms">Synonyms: </span>
