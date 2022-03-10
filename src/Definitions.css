@@ -1,3 +1,7 @@
+li {
+  text-align: left;
+  margin-bottom: 8px;
+}
 #definition {
   border: 2mm ridge rgba(50, 138, 220, 0.6);
   margin: 8px auto;

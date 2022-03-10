@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Example from "./Example";
+import Synonym from "./Synonym";
+import Antonym from "./Antonym";
 
 import "./Definitions.css";
 export default function Definitions(props) {
@@ -17,7 +20,18 @@ export default function Definitions(props) {
         {isTruncated ? "Read more" : "Read less"}
       </button>
       <ol className="content">
-        <li>{props.meaning.definitions[0].definition}</li>
+        <li>
+          {props.meaning.definitions[0].definition}
+          <div>
+            <Example data={props.meaning.definitions[0].example} />
+          </div>
+          <div>
+            <Synonym data={props.meaning.definitions[0].synonyms} />
+          </div>
+          <div>
+            <Antonym data={props.meaning.definitions[0].antonyms} />
+          </div>
+        </li>
 
         {isTruncated
           ? ""
@@ -26,6 +40,15 @@ export default function Definitions(props) {
                 return (
                   <li key={index.num}>
                     {props.meaning.definitions[num].definition}
+                    <div>
+                      <Example data={props.meaning.definitions[num].example} />
+                    </div>
+                    <div>
+                      <Synonym data={props.meaning.definitions[num].synonyms} />
+                    </div>
+                    <div>
+                      <Antonym data={props.meaning.definitions[num].antonyms} />
+                    </div>
                   </li>
                 );
               }
