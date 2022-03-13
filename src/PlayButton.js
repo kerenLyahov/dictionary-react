@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./PlayButton.css";
 
 const useAudio = (url) => {
   const [audio] = useState(new Audio(url));
@@ -24,9 +25,11 @@ const Player = ({ url }) => {
   const [playing, toggle] = useAudio(url);
 
   return (
-    <div>
-      <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
-    </div>
+    <span>
+      <button className="player" onClick={toggle}>
+        {playing ? "⏸" : "▶"}
+      </button>
+    </span>
   );
 };
 

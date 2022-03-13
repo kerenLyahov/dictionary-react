@@ -56,8 +56,12 @@ function App() {
             />
             <input type="submit" placeholder="search" className="submit" />
           </form>
-          <div className="word">{keyword.searchWord}</div>
-          <Phonetic phonetic={keyword.phonetic} />
+          <div>
+            <span className="word">{keyword.searchWord}</span>
+
+            <Phonetic phonetic={keyword.phonetic} />
+          </div>
+
           <div>
             {keyword.meaning.map(function (index, i) {
               return (
