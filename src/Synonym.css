@@ -1,6 +1,14 @@
-.body {
+.synonym-body {
   font-size: 15px;
+  margin: 5px auto;
 }
-.synonyms {
+.synonym-list {
   text-decoration: underline;
+}
+
+.synonym {
+  margin-left: 15px;
+  border: 0.5mm solid rgba(50, 138, 220, 0.6);
+  border-radius: 25px;
+  padding: 0 5px;
 }

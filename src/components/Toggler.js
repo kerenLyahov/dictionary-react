@@ -6,12 +6,13 @@ const Button = styled.button`
   background: ${({ theme }) => theme.background};
   border: 2px solid ${({ theme }) => theme.toggleBorder};
   color: ${({ theme }) => theme.button_text};
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   padding: 5px 10px;
   font-family: "Balsamiq Sans", cursive;
   float: right;
-  margin: 10px 5px 0 -5px;
+  position: relative;
+  right: 10px;
 `;
 const Toggle = ({ theme, toggleTheme }) => {
   return <Button onClick={toggleTheme}>Switch theme</Button>;

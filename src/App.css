@@ -3,14 +3,13 @@
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 800px;
-  margin: 15px auto 0 auto;
+  margin: 0 auto;
   font-family: "Balsamiq Sans", cursive;
-  border: 2mm ridge rgba(170, 50, 220, 0.6);
 }
 
 form {
   margin: 10px auto;
-  width: 80%;
+  width: 70%;
 }
 .word {
   font-size: 50px;
@@ -23,12 +22,18 @@ form {
   font-family: "Balsamiq Sans", cursive;
   width: 120px;
   margin-right: 15px;
+  text-align: center;
+  border: 0.01mm solid rgba(50, 138, 220, 0.6);
+
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px;
+  padding: 5px 0;
 }
 .submit {
   font-family: "Balsamiq Sans", cursive;
-  padding: 5px 15px;
+  padding: 5px 10px;
   background-color: lightblue;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 .submit:hover {
   cursor: pointer;
@@ -36,4 +41,13 @@ form {
 }
 #opnSrcLink {
   font-family: "Kalam", cursive;
+}
+
+h1.header {
+  cursor: default;
+  text-align: center;
+  font-family: "Farsan", cursive;
+
+  font-size: 2.5em;
+  margin-block-end: 0;
 }

@@ -3,13 +3,15 @@ import "./Antonym.css";
 export default function Antonym(props) {
   if (props.data.length !== 0) {
     return (
-      <div className="body">
-        <span className="antonym">Antonyms:</span>
-        <ul>
-          {props.data.map(function (index, num) {
-            return <li key={index}>{props.data[num]}</li>;
-          })}
-        </ul>
+      <div className="antonym-body">
+        <span className="antonym-list">Antonyms</span> :
+        {props.data.map(function (index, num) {
+          return (
+            <span className="antonym" key={index["antonym"]}>
+              {props.data[num]}
+            </span>
+          );
+        })}
       </div>
     );
   } else return null;

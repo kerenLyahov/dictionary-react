@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import Definitions from "./Definitions";
-import Phonetic from "./Phonetic";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/Globalstyle";
 import { lightTheme, darkTheme } from "./components/Themes";
@@ -10,7 +9,7 @@ import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
 
 function App() {
-  let [word, setWord] = useState("hello");
+  let [word, setWord] = useState("welcome");
   let [keyword, setKeyWord] = useState({
     ready: false,
   });
@@ -45,6 +44,7 @@ function App() {
     return (
       <ThemeProvider theme={themeMode}>
         <GlobalStyles />
+        <h1 className="header">Look up a word, learn it forever.</h1>
         <div className="App">
           <Toggle theme={theme} toggleTheme={themeToggler} />
           <form onSubmit={handleSubmit}>
@@ -54,18 +54,16 @@ function App() {
               onChange={updateWord}
               className="search"
             />
-            <input type="submit" placeholder="search" className="submit" />
+            <input type="submit" value="search" className="submit" />
           </form>
           <div>
             <span className="word">{keyword.searchWord}</span>
-
-            <Phonetic phonetic={keyword.phonetic} />
           </div>
 
           <div>
             {keyword.meaning.map(function (index, i) {
               return (
-                <div key={index}>
+                <div key={index["app"]}>
                   <Definitions meaning={keyword.meaning[i]} />
                 </div>
               );
@@ -77,7 +75,6 @@ function App() {
               href="https://github.com/kerenLyahov/Dictionary-react"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: (theme) => theme.text }}
             >
               Open-source code
             </a>{" "}

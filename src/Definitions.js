@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Example from "./Example";
 import Synonym from "./Synonym";
 import Antonym from "./Antonym";
-
 import "./Definitions.css";
+
 export default function Definitions(props) {
   const [isTruncated, setIsTruncated] = useState(true);
   function toggleIsTruncated() {
@@ -38,7 +38,7 @@ export default function Definitions(props) {
           : props.meaning.definitions.map(function (index, num) {
               if (num > 0) {
                 return (
-                  <li key={index.num}>
+                  <li key={index["defenition"]}>
                     {props.meaning.definitions[num].definition}
                     <div>
                       <Example data={props.meaning.definitions[num].example} />

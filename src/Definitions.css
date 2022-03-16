@@ -3,8 +3,11 @@ li {
   margin-bottom: 8px;
 }
 #definition {
-  border: 2mm ridge rgba(50, 138, 220, 0.6);
-  margin: 8px auto;
+  border: 0.01mm solid rgba(50, 138, 220, 0.6);
+  margin: 10px auto;
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px;
+  padding: 5px 0;
 }
 
 .collapsible {
@@ -16,6 +19,7 @@ li {
 }
 .content {
   max-width: 80%;
+  margin-inline-end: 4em;
 }
 .header {
   cursor: pointer;
@@ -24,11 +28,12 @@ li {
   float: right;
   text-align: center;
   font-family: "Balsamiq Sans", cursive;
-  padding: 5px 15px;
+  padding: 5px 10px;
   background-color: lightblue;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-left: 10px;
+  border-radius: 15px;
+  margin-right: 10px;
+  position: relative;
+  top: 15px;
 }
 #truncated:hover {
   cursor: pointer;

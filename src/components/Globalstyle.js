@@ -8,4 +8,7 @@ export const GlobalStyles = createGlobalStyle`
   a {
     color: ${({ theme }) => theme.text};
   }
+  h1{
+    color:${({ theme }) => theme.header};
+  }
   `;
