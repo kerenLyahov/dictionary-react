@@ -20,7 +20,9 @@ form {
 }
 .search {
   font-family: "Balsamiq Sans", cursive;
-  width: 120px;
+
+  max-width: 45%;
+  min-width: 40%;
   margin-right: 15px;
   text-align: center;
   border: 0.01mm solid rgba(50, 138, 220, 0.6);

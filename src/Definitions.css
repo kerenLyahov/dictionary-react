@@ -19,7 +19,7 @@ li {
 }
 .content {
   max-width: 80%;
-  margin-inline-end: 4em;
+  margin-inline-end: 6em;
 }
 .header {
   cursor: pointer;
@@ -29,7 +29,6 @@ li {
   text-align: center;
   font-family: "Balsamiq Sans", cursive;
   padding: 5px 10px;
-  background-color: lightblue;
   border-radius: 15px;
   margin-right: 10px;
   position: relative;

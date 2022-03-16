@@ -11,4 +11,11 @@ export const GlobalStyles = createGlobalStyle`
   h1{
     color:${({ theme }) => theme.header};
   }
+   #truncated, .submit{
+     background-color: ${({ theme }) => theme.buttonBackground}; 
+     border: 2px solid ${({ theme }) => theme.buttonBorder};
+  }
+.search{
+    background-color: ${({ theme }) => theme.searchBackground}; 
+}
   `;

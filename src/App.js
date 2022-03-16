@@ -12,6 +12,7 @@ function App() {
   let [word, setWord] = useState("welcome");
   let [keyword, setKeyWord] = useState({
     ready: false,
+    status: true,
   });
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
@@ -32,12 +33,23 @@ function App() {
   }
 
   function handleResponse(response) {
-    setKeyWord({
-      ready: true,
-      searchWord: response.data[0].word,
-      meaning: response.data[0].meanings,
-      phonetic: response.data[0].phonetics,
-    });
+    console.log(response.status);
+    {
+      response.status == 200
+        ? setKeyWord({
+            ready: true,
+            status: true,
+            searchWord: response.data[0].word,
+            meaning: response.data[0].meanings,
+            phonetic: response.data[0].phonetics,
+          })
+        : alert("please check spelling");
+    }
+  }
+  console.log(keyword);
+  if (keyword.status === false) {
+    alert("please check spelling");
+    // console.log(keyword);
   }
 
   if (keyword.ready) {

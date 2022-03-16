@@ -5,7 +5,7 @@ const Button = styled.button`
   content: ${({ theme }) => theme.content};
   background: ${({ theme }) => theme.background};
   border: 2px solid ${({ theme }) => theme.toggleBorder};
-  color: ${({ theme }) => theme.button_text};
+  color: ${({ theme }) => theme.toggleText};
   border-radius: 15px;
   cursor: pointer;
   padding: 5px 10px;
