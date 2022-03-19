@@ -7,12 +7,12 @@ import { GlobalStyles } from "./components/Globalstyle";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/useDarkMode";
 import Toggle from "./components/Toggler";
+import Loader from "./Loader";
 
 function App() {
   let [word, setWord] = useState("welcome");
   let [keyword, setKeyWord] = useState({
     ready: false,
-    status: true,
   });
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
@@ -33,23 +33,12 @@ function App() {
   }
 
   function handleResponse(response) {
-    console.log(response.status);
-    {
-      response.status == 200
-        ? setKeyWord({
-            ready: true,
-            status: true,
-            searchWord: response.data[0].word,
-            meaning: response.data[0].meanings,
-            phonetic: response.data[0].phonetics,
-          })
-        : alert("please check spelling");
-    }
-  }
-  console.log(keyword);
-  if (keyword.status === false) {
-    alert("please check spelling");
-    // console.log(keyword);
+    setKeyWord({
+      ready: true,
+      searchWord: response.data[0].word,
+      meaning: response.data[0].meanings,
+      phonetic: response.data[0].phonetics,
+    });
   }
 
   if (keyword.ready) {
@@ -105,7 +94,11 @@ function App() {
   } else {
     search();
 
-    return <div>Lodaing</div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 }
 export default App;

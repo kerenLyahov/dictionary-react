@@ -20,13 +20,11 @@ form {
 }
 .search {
   font-family: "Balsamiq Sans", cursive;
-
   max-width: 45%;
   min-width: 40%;
   margin-right: 15px;
   text-align: center;
   border: 0.01mm solid rgba(50, 138, 220, 0.6);
-
   border-radius: 25px;
   box-shadow: 2px 2px 5px;
   padding: 5px 0;
@@ -49,7 +47,6 @@ h1.header {
   cursor: default;
   text-align: center;
   font-family: "Farsan", cursive;
-
   font-size: 2.5em;
   margin-block-end: 0;
 }
